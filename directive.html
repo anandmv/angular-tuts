@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <title>Directive</title>
+  <!-- start here -->
+  <script>document.write("<base href=\"" + document.location + "\" />");</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="app.js"></script>
+  <!-- ends here -->
+</head>
+<body ng-controller="MainCtrl">
+  <!-- 2 way binding -->
+  <div>Say hello to 2-way binding in different way:  <span ng-bind="name"/></div>
+  <div>Hello <input ng-model="name"/></div>
+  <br/>
+  <select ng-model="myChoice">
+    <option ng-repeat="option in options" value="{{option.value}}" ng-selected="option.value == myChoice">{{option.name}}</option>
+  </select>
+  <div>Value = {{myChoice}}</div>
+
+  <!-- directive -->
+  <sample-directive></sample-directive>
+
+  <user-info></user-info>
+
+  <!-- directive <h4>Directive in different modes</h4>
+  <div user-info></div> -->
+</body>
+</html>
